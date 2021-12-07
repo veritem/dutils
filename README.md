@@ -1,6 +1,7 @@
 ### Developer utils CLI
 
-
-- Base convertor 
+- Base encoder
+- MD5 decreptor 
 - Unix time convertor
 - Timezones check
+- Binary convertor 
