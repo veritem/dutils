@@ -1,5 +1,7 @@
 use clap::{App, AppSettings};
 
+mod commands;
+
 fn main() {
     let matches = App::new("dutils")
         .setting(AppSettings::ArgRequiredElseHelp)
@@ -14,8 +16,8 @@ fn main() {
         .get_matches();
 
     match matches.subcommand_name() {
-        Some("test") => {
-            println!("No help");
+        Some("bs") => {
+            // commands::bs;
         }
         _ => unreachable!(),
     }
