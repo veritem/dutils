@@ -1,18 +1,17 @@
-use clap::{App, AppSettings};
+use clap::Command;
 
 mod commands;
 
 fn main() {
-    let matches = App::new("dutils")
-        .setting(AppSettings::ArgRequiredElseHelp)
+    let matches = Command::new("dutils")
         .version("0.1.0")
         .author("Makuza Mugabo Verite")
-        .subcommand(App::new("bc").about("Convert between binary and decimal"))
-        .subcommand(App::new("bs").about("Econder for base64"))
-        .subcommand(App::new("tz").about("Convert time zones"))
-        .subcommand(App::new("tc").about("Convert between time formats"))
-        .subcommand(App::new("hc").about("Hash conversions"))
-        .subcommand(App::new("pg").about("Utils to handle passwords"))
+        .subcommand(Command::new("c").about("Convert between binary and decimal"))
+        .subcommand(Command::new("s").about("Econder for base64"))
+        .subcommand(Command::new("z").about("Convert time zones"))
+        .subcommand(Command::new("c").about("Convert between time formats"))
+        .subcommand(Command::new("c").about("Hash conversions"))
+        .subcommand(Command::new("g").about("Utils to handle passwords"))
         .get_matches();
 
     match matches.subcommand_name() {
