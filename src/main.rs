@@ -1,4 +1,4 @@
-use clap::{Command, Arg};
+use clap::{Arg, Command};
 
 mod commands;
 
@@ -27,9 +27,8 @@ fn main() {
             Command::new("hash")
             .about("Hash conversions")
             .short_flag('h')
-            .arg_required_else_help(true)
-        ) 
-        .subcommand(
+            .arg_required_else_help(true),
+        ) .subcommand(
             Command::new("timezone")
                 .about("Handle timezones")
                 .short_flag('t')
