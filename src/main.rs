@@ -1,4 +1,4 @@
-use clap::Command;
+use clap::{Command, Arg};
 
 mod commands;
 
@@ -10,7 +10,13 @@ fn main() {
             Command::new("binary")
                 .short_flag('b')
                 .about("converters")
-                .arg_required_else_help(true),
+                .arg_required_else_help(true).arg(
+                    Arg::new("decimal")
+                    .short('d')
+                        .long("decimal")
+                        .required(true)
+                        .takes_value(true),
+                ),
         )
         .subcommand(
             Command::new("base64")
@@ -45,8 +51,8 @@ fn main() {
         .get_matches();
 
     match matches.subcommand_name() {
-        Some("c") => {
-            // commands::bs;
+        Some("binary") => {
+            commands::binary::convert_to_binary(matches.subcommand_matches("binary").unwrap());
         }
         _ => unreachable!(),
     }

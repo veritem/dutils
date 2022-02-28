@@ -1,8 +1,13 @@
 ### Developer utils CLI
 
-- Base encoder
-- MD5 decreptor 
-- Unix time convertor
-- Timezones check
-- Binary convertor 
+> Experimental
 
+- Base64 encoder
+- Timezones convert
+- Binary convertor 
+- Hash functions 
+
+
+### Licence
+
+MIT &copy; 2022 Makuza Mugabo Verite  
